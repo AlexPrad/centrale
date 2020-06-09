@@ -8,7 +8,7 @@ const HomePage = () => {
       <header className="HomePage-header">
         <img src={logo} className="HomePage-logo" alt="logo" />
         <p>
-          Edit <code>src/HomePage.js</code> and save to reload.
+          Edit <code>src/HomePage.js</code> and save to reload. Test
         </p>
         <a
           className="HomePage-link"

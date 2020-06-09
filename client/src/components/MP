@@ -1,0 +1,30 @@
+
+class Movie extends React.Component {
+  render(props) {
+    console.log(this.props)
+    var urlcourante = document.location.href;
+    // Supprimons l'éventuel dernier slash de l'URL
+    var urlcourante = urlcourante.replace(/\/$/, "");
+    // Gardons dans la variable queue_url uniquement la portion derrière le dernier slash de urlcourante
+    const queue_url = urlcourante.substring (urlcourante.lastIndexOf( "/" )+1 );
+    const lien = String('https://api.themoviedb.org/3/movie/'+{queue_url}+'?api_key=9f22b180654b01e40d392977511cc5de&language=en-US')
+    
+    fetch("https://yn9065r1i6.execute-api.eu-west-1.amazonaws.com/dev/items", {method:"POST", body: JSON.stringify({"Title":"The Avengers","Year":"2012","Rated":"PG-13","Released":"04 May 2012","Runtime":"143 min","Genre":"Action, Adventure, Sci-Fi","Director":"Joss Whedon","Writer":"Joss Whedon (screenplay), Zak Penn (story), Joss Whedon (story)","Actors":"Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth","Plot":"Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.","Language":"English, Russian, Hindi","Country":"USA","Awards":"Nominated for 1 Oscar. Another 38 wins & 79 nominations.","Poster":"https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"8.0/10"},{"Source":"Rotten Tomatoes","Value":"92%"},{"Source":"Metacritic","Value":"69/100"}],"Metascore":"69","imdbRating":"8.0","imdbVotes":"1,230,825","imdbID":"tt0848228","Type":"movie","DVD":"N/A","BoxOffice":"N/A","Production":"N/A","Website":"N/A","Response":"True"})});
+
+    return (
+      <div>
+        <h1>Movie</h1>
+        <p>{queue_url}</p>
+      </div>
+    )
+  };
+};
+
+
+
+
+ var urlcourante = document.location.href;
+    // Supprimons l'éventuel dernier slash de l'URL
+    var urlcourante = urlcourante.replace(/\/$/, "");
+    // Gardons dans la variable queue_url uniquement la portion derrière le dernier slash de urlcourante
+    const queue_url = urlcourante.substring (urlcourante.lastIndexOf( "/" )+1 );

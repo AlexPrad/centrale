@@ -49,7 +49,7 @@ functions:
     events:
       - http:
           method: get
-          path: items
+          path: movie
           cors:
             origin: http://localhost:3000
             allowCredentials: true

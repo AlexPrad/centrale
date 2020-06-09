@@ -1,0 +1,22 @@
+{
+    "cs-group-13-alexandre-dynamodb": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "type": {"S":"movie"},
+                    "uuid": {"S":"2"},
+                    "title": {"S":"Avengers"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "type": {"S":"movie"},
+                    "uuid": {"S":"3"},
+                    "title": {"S":"Transformers"}
+                }
+            }
+        }
+    ]
+}

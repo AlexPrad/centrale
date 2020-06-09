@@ -13,13 +13,13 @@ module.exports.handle = async event => {
             '#type': 'type'
         },
         ExpressionAttributeValues: {
-            ':type': 'items',
+            ':type': 'movie',
         },
     }).promise();
 
     return {
         statusCode: 200,
-        body: JSON.stringify(result.Items),
+        body: JSON.stringify({results : result.Items}),
     }
 }
 

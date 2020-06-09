@@ -1,3 +1,3 @@
-const add2Numbers = (a, b) => a + b;
+const add2Numbers = (a, b) => 1 + 2;
 
 export default add2Numbers;
