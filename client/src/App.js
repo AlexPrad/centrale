@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import recommande from "./components/recommande";
@@ -7,6 +7,7 @@ import SubmitEventStory from "./components/MoviePage2";
 
 
 function App() {
+  const [selectedUser, setSelectedUser] = useState('emma')
   return (
     <Router>
       <div> 
@@ -31,7 +32,7 @@ function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/liste">
-            <PokemonDisplayer />
+            <PokemonDisplayer user={selectedUser}/>
           </Route>
           <Route path="/reco">
             <recommande />

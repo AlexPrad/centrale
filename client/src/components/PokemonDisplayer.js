@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-const PokemonDisplayer = () => {
+const PokemonDisplayer = (props) => {
+  const user = props.ref
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);

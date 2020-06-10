@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import Moviepage from "./MoviePage"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-const PokemonDisplayer = () => {
+const PokemonDisplayer = (props) => {
+  const user = props.user
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
@@ -47,7 +48,7 @@ const PokemonDisplayer = () => {
         </ul>
         <Switch>
           <Route path="/movie/:id">
-            <Moviepage /> 
+            <Moviepage user={user}/> 
             </Route>
           </Switch>
         </Router>

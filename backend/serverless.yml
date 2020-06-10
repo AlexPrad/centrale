@@ -34,6 +34,27 @@ functions:
             origin: http://localhost:3000
             allowCredentials: true
 
+  getcopy:
+    handler: functions/getcopy.handle
+    events:
+      - http:
+          method: get
+          path: test1/{id}
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+
+  getcopy2:
+    handler: functions/getcopy2.handle
+    events:
+      - http:
+          method: get
+          path: test2/{id}
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+
+
   create:
     handler: functions/create.handle
     events:
@@ -44,12 +65,43 @@ functions:
             origin: http://localhost:3000
             allowCredentials: true
 
+  createnote:
+    handler: functions/createnote.handle
+    events:
+      - http:
+          method: post
+          path: creanote
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+
+
   list:
     handler: functions/list.handle
     events:
       - http:
           method: get
           path: movie
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+
+  listnotemovie:
+    handler: functions/listnotemovie.handle
+    events:
+      - http:
+          method: get
+          path: movielist/{id}
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+
+  listnoteuser:
+    handler: functions/listnoteuser.handle
+    events:
+      - http:
+          method: get
+          path: userlist/{id}
           cors:
             origin: http://localhost:3000
             allowCredentials: true

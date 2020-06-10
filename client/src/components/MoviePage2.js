@@ -1,5 +1,5 @@
 import React from "react";
-import { withKnobs } from "@storybook/addon-knobs";
+//import { withKnobs } from "@storybook/addon-knobs";
 
 // reference: https://reactjs.org/docs/uncontrolled-components.html
 
@@ -22,7 +22,7 @@ export const SubmitEventStory = () => {
     console.log({uuid : input2.current.value, title: input.current.value, desc: input3.current.value,})
     await fetch("https://yn9065r1i6.execute-api.eu-west-1.amazonaws.com/dev/crea", {
         method:"post",
-        body: JSON.stringify({uuid : input2.current.value, title: input.current.value, desc: input3.current.value,})}
+        body: JSON.stringify({year : input2.current.value, title: input.current.value, desc: input3.current.value,uuid: id})}
     )
     //event.preventDefault();
   };
@@ -38,7 +38,7 @@ export const SubmitEventStory = () => {
       </div>
       <div>
       <label>
-        Identifiant unique : 
+        Année : 
         <input type="number" ref={input2} required/>
       </label>
       </div>
