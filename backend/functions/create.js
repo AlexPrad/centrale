@@ -11,8 +11,9 @@ module.exports.handle = async event => {
 
     const item = {
         type: 'movie',
-        uuid: uuid.v1(),
-        content: data.content,
+        uuid: data.uuid,
+        title: data.title,
+        description: data.desc,
         createdAt: Date.now(),
     }
 
@@ -23,6 +24,10 @@ module.exports.handle = async event => {
 
     return {
         statusCode: 200,
+        headers: {
+            'Access-Control-Allow-Origin': 'http://localhost:3000',
+            'Access-Control-Allow-Credentials': true,
+          },
         body: JSON.stringify(item),
     }
 }

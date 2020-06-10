@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import PokemonDisplayer from "./components/PokemonDisplayer";
+//import PokemonDisplayer from "./components/PokemonDisplayer";
+import MoviePage2 from "./components/MoviePage2"
 import PokemonDisplayer2 from "./components/PokemonDisplayer2";
-import Test from "./components/someRandomFileToTest";
+//import Test from "./components/someRandomFileToTest";
 import HomePage from "./components/HomePage";
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/demo">
-            <Test/>
+            <MoviePage2 />
           </Route>
           <Route path="/demo2">
             <PokemonDisplayer2 />
