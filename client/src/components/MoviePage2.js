@@ -20,13 +20,9 @@ export const SubmitEventStory = () => {
     const id = responseJson.results.length + 1
     console.log(id)
     console.log({uuid : input2.current.value, title: input.current.value, desc: input3.current.value,})
-    await fetch("https://yn9065r1i6.execute-api.eu-west-1.amazonaws.com/dev/items", {
+    await fetch("https://yn9065r1i6.execute-api.eu-west-1.amazonaws.com/dev/crea", {
         method:"post",
-        headers: {
-          'Access-Control-Allow-Origin': 'http://localhost:3000',
-          'Access-Control-Allow-Credentials': true,
-        },
-        body: JSON.stringify({uuid : input2.current.value, title: input2.current.value, desc: input3.current.value,})}
+        body: JSON.stringify({uuid : input2.current.value, title: input.current.value, desc: input3.current.value,})}
     )
     //event.preventDefault();
   };

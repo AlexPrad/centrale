@@ -1,4 +1,3 @@
-const uuid = require('uuid');
 const DynamoDB = require('aws-sdk/clients/dynamodb');
 
 module.exports.handle = async event => {

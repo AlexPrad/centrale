@@ -39,7 +39,7 @@ functions:
     events:
       - http:
           method: post
-          path: items
+          path: crea
           cors:
             origin: http://localhost:3000
             allowCredentials: true
