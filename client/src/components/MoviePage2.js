@@ -30,19 +30,27 @@ export const SubmitEventStory = () => {
   return (
     <ul>
     <form onSubmit={handleSubmit}>
+      <div>
       <label>
-        Titre :
+        Titre : 
         <input type="text" ref={input} required/>
       </label>
+      </div>
+      <div>
       <label>
-        Identifiant unique :
+        Identifiant unique : 
         <input type="number" ref={input2} required/>
       </label>
+      </div>
+      <div>
       <label>
-        Description :
+        Description : 
         <input type="text" ref={input3} />
       </label>
+      </div>
+      <div>
       <input type="submit" value="Submit" />
+      </div>
     </form>
     </ul>
   );
