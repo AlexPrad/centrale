@@ -8,7 +8,7 @@ const HomePage = () => {
       <header className="HomePage-header">
         <img src={logo} className="HomePage-logo" alt="logo" />
         <p>
-          Edit <code>src/HomePage.js</code> and save to reload. Test
+          Edit <code>src/HomePage.js</code> and save to reload.
         </p>
         <a
           className="HomePage-link"
@@ -23,4 +23,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default HomePage; 
