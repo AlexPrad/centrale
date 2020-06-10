@@ -1,35 +1,42 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import PokemonDisplayer from "./components/PokemonDisplayer";
-import PokemonDisplayer2 from "./components/PokemonDisplayer2";
-import Test from "./components/someRandomFileToTest";
 import HomePage from "./components/HomePage";
+import recommande from "./components/recommande";
+import PokemonDisplayer from "./components/movielist";
+import SubmitEventStory from "./components/ajout";
 
 function App() {
   return (
     <Router>
-      <div>
+      <div> 
+        <div><h1> Nom du site </h1></div>
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Accueil</Link>
             </li>
             <li>
-              <Link to="/demo">API Fetch demo</Link>
+              <Link to="/liste">Liste de films</Link>
             </li>
             <li>
-              <Link to="/demo2">API Fetch demo 2</Link>
+              <Link to="/reco"> Recommande-moi un film </Link>
+            </li>
+            <li>
+              <Link to="/ajout"> Ajouter un film </Link>
             </li>
           </ul>
         </nav>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/demo">
-            <Test/>
+          <Route path="/liste">
+            <PokemonDisplayer />
           </Route>
-          <Route path="/demo2">
-            <PokemonDisplayer2 />
+          <Route path="/reco">
+            <recommande />
+          </Route>
+          <Route path="/ajout">
+            <SubmitEventStory />
           </Route>
           <Route path="/">
             <HomePage />
