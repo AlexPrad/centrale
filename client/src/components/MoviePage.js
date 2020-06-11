@@ -58,9 +58,12 @@ const Moviepage = (props) => {
           } else {
                 return (
                     <div>
+                        <ul> 
+                        <h3>Fiche descriptive de {items}</h3>
                         <ul>Titre du film : {items}</ul>
                         <ul>Identifiant du film : {items2}</ul>
                         <ul>Description : {items3}</ul>
+                        </ul>
                     </div>
                     
                 )
@@ -71,8 +74,8 @@ const Moviepage = (props) => {
         <div>
             <button onClick={triggerFetchAgain}>Fetch again</button>
             {Display()}
-            <h4>Noter le film {items}</h4>
             <ul>
+            <h3>Noter le film {items}</h3>
               <form onSubmit={Fetch2}>
               <div>
               <label>

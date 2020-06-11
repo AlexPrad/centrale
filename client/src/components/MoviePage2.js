@@ -1,4 +1,5 @@
 import React from "react";
+import "./HomePage.css"
 //import { withKnobs } from "@storybook/addon-knobs";
 
 // reference: https://reactjs.org/docs/uncontrolled-components.html
@@ -29,6 +30,7 @@ export const SubmitEventStory = () => {
 
   return (
     <ul>
+    <h3> Quel film souhaites-tu ajouter ? </h3>
     <form onSubmit={handleSubmit}>
       <div>
       <label>
@@ -52,8 +54,12 @@ export const SubmitEventStory = () => {
       <input type="submit" value="Submit" />
       </div>
     </form>
+    <header className="HomePage-header">
+    </header>
     </ul>
+    
   );
 };
 
 export default SubmitEventStory
+

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 //import { Link, Switch } from "react-router-dom";
 import Moviepage from "./MoviePage"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import "./HomePage.css"
 
 const PokemonDisplayer = (props) => {
   const user = props.user
@@ -41,16 +42,20 @@ const PokemonDisplayer = (props) => {
       return (
         <Router>
         <ul>
+        <h3> Liste des films </h3>
           {items.map((item) => (
             //<li key={item.name}>{<a href={item.url} target="_blank" rel="noopener noreferrer"> {item.name} </a>}</li>
-            <li key={item.uuid}><Link to={String('/movie/'+item.uuid)}>{item.title}</Link></li>
+            <li key={item.uuid}><Link className = "links" to={String('/movie/'+item.uuid)}>{item.title}</Link></li>
           ))}
         </ul>
         <Switch>
           <Route path="/movie/:id">
             <Moviepage user={user}/> 
+            
             </Route>
           </Switch>
+        <header className="HomePage-header">
+        </header>
         </Router>
       );
     }
