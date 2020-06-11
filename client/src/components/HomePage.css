@@ -9,7 +9,7 @@
 }
 
 .HomePage-header {
-  background-color: #282c34;
+  background-color: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -31,3 +31,28 @@
     transform: rotate(360deg);
   }
 }
+
+.HomePage-title {
+  background-color: rgb(104, 96, 92);
+  color: white;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  padding: "10px" ;
+  text-align: center;
+}
+
+.background {
+  background-image: url("/image_fond.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.police_color {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color : white
+}
+
+.links {
+  color: white;
+}
+

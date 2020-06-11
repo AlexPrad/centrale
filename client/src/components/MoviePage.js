@@ -1,34 +1,47 @@
 import React, { useState, useEffect } from "react";
 
-const Moviepage = () => {
+const Moviepage = (props) => {
+    const user = props.user
     const [error, setError] = useState(null);
     const [items, setItems] = useState([]);
+    const [items2, setItems2] = useState([]);
+    const [items3, setItems3] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [fetchAgain, setFetchAgain] = useState(false);
     const triggerFetchAgain = () => setFetchAgain(!fetchAgain);
+    const input3 = React.createRef();
 
-    var urlcourante = document.location.href;
+    const urlcourante = document.location.href;
     // Supprimons l'éventuel dernier slash de l'URL
-    var urlcourante = urlcourante.replace(/\/$/, "");
+    const urlcourante2 = urlcourante.replace(/\/$/, "");
     // Gardons dans la variable queue_url uniquement la portion derrière le dernier slash de urlcourante
-    const queue_url = urlcourante.substring (urlcourante.lastIndexOf( "/" )+1 );
-   
-    const lien = String('https://api.themoviedb.org/3/movie/'+{queue_url}+'?api_key=9f22b180654b01e40d392977511cc5de&language=en-US')
-
-    const Fetch = async () => {
+    const queue_url = urlcourante2.substring (urlcourante2.lastIndexOf( "/" )+1 );
+        const Fetch = async () => {
         try {
-            const response = await fetch({lien});   //https://yn9065r1i6.execute-api.eu-west-1.amazonaws.com/dev/movie
-            //const responseJson = await response.json();
-            //console.log(responseJson)
+            const response = await fetch('https://yn9065r1i6.execute-api.eu-west-1.amazonaws.com/dev/items/'+queue_url);   //https://yn9065r1i6.execute-api.eu-west-1.amazonaws.com/dev/movie   'https://yn9065r1i6.execute-api.eu-west-1.amazonaws.com/dev/items/'+
+            const responseJson = await response.json();
+            console.log(responseJson)
             setIsLoaded(true);
             setError(false);
-            setItems(response);
+            setItems(responseJson.title);
+            setItems2(responseJson.uuid);
+            setItems3(responseJson.description);
         } catch (error) {
             setIsLoaded(true);
             setError(error);
         }
 
     }
+    const Fetch2 = async (event) => {
+      event.preventDefault();
+      await fetch('https://yn9065r1i6.execute-api.eu-west-1.amazonaws.com/dev/creanote', {
+        method:"post",
+        body: JSON.stringify({title: items, user: user, note: input3.current.value})}
+    )
+        console.log(input3.current.value)
+        console.log(user)
+    }
+
 
     useEffect(() => {
         setIsLoaded(false);
@@ -43,20 +56,41 @@ const Moviepage = () => {
           } else if (!isLoaded) {
             return <div>Loading...</div>;
           } else {
-                return <ul>{queue_url}</ul>
+                return (
+                    <div>
+                        <ul> 
+                        <h3>Fiche descriptive de {items}</h3>
+                        <ul>Titre du film : {items}</ul>
+                        <ul>Identifiant du film : {items2}</ul>
+                        <ul>Description : {items3}</ul>
+                        </ul>
+                    </div>
+                    
+                )
           }
     }
     return (
         <div>
+        <div>
             <button onClick={triggerFetchAgain}>Fetch again</button>
             {Display()}
-            <h4>Noter le film</h4>
-            <button> 1 </button>
-            <button> 2 </button>
-            <button> 3 </button>
-            <button> 4 </button>
-            <button> 5 </button>
+            <ul>
+            <h3>Noter le film {items}</h3>
+              <form onSubmit={Fetch2}>
+              <div>
+              <label>
+                Note : 
+                <input type="number" ref={input3} min="0" max="5" required/>
+              </label>
+              </div>
+              <div>
+              <input type="submit" value="Submit" />
+              </div>
+              </form>
+            </ul>
         </div>
+      </div>
+
     );
 };
 
