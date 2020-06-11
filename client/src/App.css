@@ -1,0 +1,27 @@
+.background {
+    background-image: url("/image_fond.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color : white
+}
+
+
+
+.title {
+    text-shadow:0 0 20px white,2px 3px 3px #141414, 0 0 100px #00D4D1;color:#00FFFC;
+    background-color: black;
+    color: white;
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: xx-large;
+    padding: "10px" ;
+    text-align: center;
+  }
+
+.links {
+    color: white;
+}
+
+
+
